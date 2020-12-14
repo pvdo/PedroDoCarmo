@@ -33,7 +33,7 @@ class GalleryItem extends Component{
             <div className="container">
                 <ul className="grid">
                         {this.state.items.map(item => (
-                                <Nav.Link href={item.refUrl  } className={"roundLinkLab"}>
+                                <Nav.Link key={item.id} href={item.refUrl  } className={"roundLinkLab"}>
                                     <h3 className="h3Lab">{item.title}</h3>
                                     <p className="textMenuLab"> {item.synop}</p>
                                 </Nav.Link>

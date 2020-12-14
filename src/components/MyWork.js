@@ -14,7 +14,7 @@ class MyWork extends Component{
 
     render(){
         return(
-            <div>
+            <div className="mb-5">
                 <h1 className="h1A">PROJECTS</h1>
                 <div className="container centerCol margin-bottom">
                     <p className="pLab">Check out my projects!</p>

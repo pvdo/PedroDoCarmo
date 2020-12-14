@@ -3,6 +3,7 @@
   grid-gap: 200px;
   grid-auto-rows: 100px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  padding: 0;
 }
 .h3Lab {
   font-family: "Monaco";

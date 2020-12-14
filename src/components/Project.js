@@ -39,7 +39,7 @@ class Project extends Component{
                         <Image  src={this.state.project.image} className="mb-5 sizeImg" alt={this.state.project.title}></Image>
                     </div>
                 </div>
-                <Container className="container mt-5 px-5">
+                <Container className="container px-5">
                     <Row className="">
                         <Col md={2}>
                             <strong>Challange:</strong>

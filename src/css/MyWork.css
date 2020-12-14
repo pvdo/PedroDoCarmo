@@ -6,7 +6,7 @@
   font-size: 2em;
   color: #ffffff;
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 @keyframes galleryLab {
@@ -21,6 +21,6 @@
   .pLab {
     text-align: center;
     font-size: 1.3em;
-    margin-top: 50px;
+    margin-top: 20px;
   }
 }
