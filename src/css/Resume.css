@@ -1,0 +1,16 @@
+.resumeLink {
+  text-align: center;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 10em;
+  height: 10em;
+  transition: 1s;
+  font-size: 1em;
+}
+.resumeLink:hover {
+  background-color: #000;
+  color: #fff;
+  width: 21em;
+  border-color: #000;
+  border-radius: 1%;
+}

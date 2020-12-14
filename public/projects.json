@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "refUrl": "/projects/bettermeals",
+        "title": "Better Meals",
+        "urlName": "bettermeals",
+        "challenge": "Design an e-commerce website that includes, Homepage, Products page, Login, Registration page, Dashboard, Cart Check-out and order confirmation by email ",
+        "synop": "JavaScript / Node JS / Express JS / Handlebars JS / Mongo / JQuery",
+        "image": "../images/betterMeals.png",
+        "siteLink": "https://bettermeals.herokuapp.com"
+
+    },
+    {
+        "id": 2,
+        "refUrl": "/projects/plentymilk",
+        "title": "Plenty Milk",
+        "urlName": "plentymilk",
+        "challenge": "Design and development of homepage and front end form validation",
+        "synop": "HTML / CSS",
+        "image": "../images/plentymilkImg.png",
+        "siteLink": "https://plentymilk.netlify.app/index.html"
+
+    }
+]

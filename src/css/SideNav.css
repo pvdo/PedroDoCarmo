@@ -1,0 +1,75 @@
+.fixed-bottomA {
+  text-align: center;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+}
+
+.roundLinkA {
+  height: 6vw;
+  width: 6vw;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 30px;
+  border-radius: 50%;
+  background-color: #000;
+  font-size: 0.5em;
+
+  color: #e3c252;
+  transition: 0.5s;
+}
+
+.roundLinkA:hover {
+  height: 5.5vw;
+  width: 5.5vw;
+  bottom: 85%;
+  padding-top: 35px;
+  background-color: #fff;
+  font-size: 0.5em;
+
+  color: #e3c252;
+  transition: 0.5s;
+}
+
+.roundLinkA h3 {
+  font-weight: bold;
+  font-size: 1vw;
+}
+
+@media screen and (max-width: 700px) {
+  .fixed-bottomA {
+    justify-content: center;
+    position: fixed;
+    width: auto;
+    height: 60px;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.966);
+  }
+  .roundLinkA {
+    height: 2em;
+    width: auto;
+    font-size: 0.6em;
+    border-radius: 0%;
+    padding-top: 0px;
+
+    background-color: transparent;
+  }
+  .roundLinkA:hover {
+    height: 2em;
+    width: auto;
+    font-size: 0.6em;
+    border-radius: 0%;
+    bottom: 0;
+    padding-top: 0px;
+    background-color: transparent;
+    color: #e3c252;
+  }
+  .roundLinkA h3 {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+}

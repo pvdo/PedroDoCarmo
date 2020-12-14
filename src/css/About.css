@@ -1,0 +1,87 @@
+.centeredA {
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  height: auto;
+}
+
+.h4A {
+  font-family: "Monaco";
+  font-size: 15em;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1em;
+}
+
+.pA {
+  font-family: "Monaco";
+  background-color: #d3ad2f91;
+  font-size: 2vw;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  padding: 30px;
+}
+
+.imgResponsiveA {
+  max-width: 100%;
+  height: auto;
+
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -1;
+}
+.resumeLink {
+  background-color: #ffffff;
+  margin-top: 20px;
+  transition: 1s;
+  padding: 20px;
+  font-weight: bold;
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+.resumeLink span {
+  font-size: 1.4vw;
+}
+.resumeLink:hover {
+  background-color: #000;
+  color: #fff;
+  border-radius: 1%;
+}
+.finalMargin {
+  height: 70px;
+}
+
+@media screen and (max-width: 800px) {
+}
+
+@media screen and (max-width: 700px) {
+  .pA {
+    font-size: 0.8em;
+    top: 35%;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  .textImgA {
+    height: 35vh;
+  }
+  .h1A {
+    font-size: 15px;
+  }
+  .h4A {
+    font-size: 30vw;
+  }
+  .imgResponsiveA {
+    max-width: 70%;
+  }
+  .resumeLink {
+    background-color: #ffffff;
+    transition: 1s;
+    font-size: 0.8em;
+    height: 2em;
+  }
+  .resumeLink span {
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,168 @@
+.margin-bottom {
+  margin-bottom: 100px;
+}
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+h1,
+h2 {
+  font-family: "Krungthep";
+}
+
+h3 {
+  font-family: "Monaco";
+  margin: auto;
+  font-size: 1.5em;
+  animation: 3s ease-out menuTextAni;
+}
+
+.frontClass {
+  position: absolute;
+  right: 0;
+  left: 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+  top: 10%;
+  font-size: 3vw;
+}
+
+.whiteBoard {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  margin: auto;
+}
+
+.whiteBoard h1 {
+  font-family: "Krungthep";
+  color: #fff;
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  justify-content: center;
+  font-size: 10vw;
+  line-height: 7.5vw;
+  -webkit-text-stroke: 1px;
+  white-space: nowrap;
+  animation: 2s ease-out pedroAni;
+}
+.whiteBoard h1:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: bottom;
+  transform: rotateX(180deg);
+
+  opacity: 0.2;
+  color: #e3c252;
+
+  -webkit-text-stroke: 1px;
+}
+
+.fixed-bottom {
+  justify-content: center;
+  margin-bottom: 3em;
+  padding: 0;
+}
+.fixed-bottom2 {
+  justify-content: center;
+  margin-bottom: 0em;
+  padding: 0;
+}
+
+.roundLink {
+  height: 8em;
+  width: 8em;
+  padding-top: 40px;
+  border-radius: 50%;
+  background-color: #e3c252;
+  font-size: 0.5em;
+  color: #fff;
+  transition: 0.5s;
+  animation: 2s menuAni;
+}
+
+.roundLink:hover {
+  height: 12em;
+  width: 12em;
+  padding-top: 65px;
+}
+
+.roundLinkClicked {
+  height: 5em;
+  width: 5em;
+  padding-top: 20px;
+  border-radius: 50%;
+  background-color: #e3c252;
+  font-size: 0.5em;
+  color: #ffffff;
+  transition: 2s;
+  animation: 2s ease-out 0s 1 menuAni;
+  animation: 2s ease-out 0s 1 clickedAni;
+}
+
+@keyframes clickedAni {
+  from {
+    height: 5em;
+    width: 5em;
+  }
+  to {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@keyframes pedroAni {
+  0% {
+    transform: translateY(-200%);
+  }
+  60% {
+    transform: translateY(0);
+  }
+}
+@keyframes menuAni {
+  0% {
+    transform: translateY(2000%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .roundLink {
+    height: 70px;
+    width: 70px;
+    font-size: 8px;
+    padding-top: 30px;
+    transition: 2s;
+  }
+  .roundLink:hover {
+    height: 70px;
+    width: 70px;
+    padding-top: 30px;
+  }
+  .frontClass {
+    font-size: 1em;
+    top: 20%;
+  }
+}

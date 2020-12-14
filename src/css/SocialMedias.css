@@ -1,0 +1,27 @@
+.social {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+.socialImg {
+  width: 2.5vw;
+}
+
+.social > a {
+  margin: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .social {
+    height: 1px;
+    width: auto;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+  }
+  .socialImg {
+    width: 1.3em;
+  }
+}

@@ -1,0 +1,23 @@
+.centerImage {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+.breadcrumb {
+  background-color: transparent;
+}
+.sizeImg {
+  max-width: 100%;
+  height: auto;
+}
+.aColor {
+  color: #fff;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 700px) {
+  .sizeImg {
+    max-width: auto;
+    height: 15em;
+  }
+}

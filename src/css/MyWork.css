@@ -1,0 +1,26 @@
+.centerCol {
+  justify-content: space-around;
+}
+.pLab {
+  font-family: "Monaco";
+  font-size: 2em;
+  color: #ffffff;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+@keyframes galleryLab {
+  0% {
+    transform: translateY(2000%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 700px) {
+  .pLab {
+    text-align: center;
+    font-size: 1.3em;
+    margin-top: 50px;
+  }
+}
