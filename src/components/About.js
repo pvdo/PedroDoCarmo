@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Image} from "react-bootstrap";
 import "../css/About.css"
 import SideNav from "../components/SideNav"
-import PedroImg from "../others/pedroLuminosity_small.png"
+import PedroImg from "../others/pedroLuminosity_small2.png"
 
 import resumePdf from '../others/PedroDoCarmo_Developer_Resume.pdf'
 
