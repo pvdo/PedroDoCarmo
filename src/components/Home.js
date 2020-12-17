@@ -40,14 +40,14 @@ class Home extends Component {
           <Nav className="fixed-bottom" defaultActiveKey="/home" as="ul">
           
             <Nav.Item as="li">
-              <Nav.Link href="/About"><div className={"roundLink"} onClick={this.addClass}> <h3>ABOUT</h3></div>
+              <Nav.Link href="/about"><div className={"roundLink"} onClick={this.addClass}> <h3>ABOUT</h3></div>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link href="/Laboratory"><div className="roundLink"><h3>LAB</h3></div></Nav.Link>
+              <Nav.Link href="/laboratory"><div className="roundLink"><h3>LAB</h3></div></Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link href="/Projects"><div className="roundLink"><h3>PROJECTS</h3></div></Nav.Link>
+              <Nav.Link href="/projects"><div className="roundLink"><h3>PROJECTS</h3></div></Nav.Link>
             </Nav.Item>
           </Nav>
           

@@ -5,6 +5,7 @@
   bottom: 0;
   left: 0;
   width: 10px;
+  margin-top: 100px;
 }
 
 .roundLinkA {
@@ -39,9 +40,12 @@
 }
 
 @media screen and (max-width: 700px) {
+  .marginTop {
+    margin-top: 100px;
+  }
+
   .fixed-bottomA {
     justify-content: center;
-    position: fixed;
     width: auto;
     height: 60px;
     align-items: center;

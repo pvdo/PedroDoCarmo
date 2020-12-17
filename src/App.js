@@ -7,6 +7,7 @@ import NotFound from './components/NotFound';
 import {Switch, Route } from 'react-router-dom';
 import Project from './components/Project';
 import SocialMedias from './components/SocialMedias';
+import TheOffice from './components/TheOffice';
 // import ColorBlind from './components/ColorBlind';
 
 class App extends Component {
@@ -16,12 +17,13 @@ class App extends Component {
         <SocialMedias></SocialMedias>
         <Switch>
                     <Route exact path="/" component={Home}/>
-                    <Route path="/laboratory" component={Lab}/>
+                    <Route exact path="/laboratory" component={Lab}/>
                     <Route path="/about" component={About}/>
                     <Route exact path="/projects" component={MyWork}/>
                     <Route path="/projects/:name" render={(props) =>(
                       <Project name={props.match.params.name}/>
                     )}/>
+                    <Route path="/laboratory/theoffice" component={TheOffice}/>
                     <Route render={() => (<NotFound/>)}/>
         </Switch>
       </div>
