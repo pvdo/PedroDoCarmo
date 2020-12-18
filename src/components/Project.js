@@ -28,7 +28,7 @@ class Project extends Component{
 
     render(){
         return(
-            <div >
+            <div className="fullSize">
                 <h1 className="h1A">PROJECTS</h1>
                 
 
@@ -39,7 +39,7 @@ class Project extends Component{
                         <Image  src={this.state.project.image} className="mb-5 sizeImg" alt={this.state.project.title}></Image>
                     </div>
                 </div>
-                <Container className="container px-5">
+                <div className="container margin-bottom px-5">
                     <Row className="">
                         <Col md={2}>
                             <strong>Challange:</strong>
@@ -56,8 +56,8 @@ class Project extends Component{
                             <p>{this.state.project.synop}</p>
                         </Col>
                     </Row>
-                </Container>
-                <SideNav page={this.state.menu}/>
+                </div>
+                <SideNav/>
             </div>
         )
     }

@@ -39,7 +39,7 @@ class Lab extends Component{
                         {listLab}
                     </Row>
                 </div>
-                <SideNav page={this.state.menu}/>
+                <SideNav/>
             </div>
         )
     }

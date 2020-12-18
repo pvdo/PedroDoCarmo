@@ -11,32 +11,39 @@ function TheOffice(){
     const [filterQuotes, setFilterQuotes] = useState(); //Array holds quotes filtered by character
     const [isFilter, setIsFilter] = useState(false); //Toggle if using filter quotes or not
     const [quoteCounter, setQuoteCounter] = useState(0); //Quote counter for filter quotes
-    const [characters, setCharacters] = useState([]);
+    const [characters, setCharacters] = useState([]); //Holds one quote from each character
     const [showCharacters, setShowCharacters] = useState(false); //Toggle to show character list
+    const [highlighId, setHighlighId] = useState(); //Highlight the characters clicked
 
-
+    /*
+    ** It happen just when it is mounted
+    ** fetch All Quotes from https://www.officeapi.dev
+    ** Assign values fetched to quotes
+     */
     useEffect(() =>{
-        //fetch All Quotes
+        
         const fetchQuotes = async() =>{
             const result = await fetch('/quotes').then(response => response.json());
             setQuotes(result)
         };
-        const fetchCharacters = async() =>{
-            const result = await fetch('/characters').then(response => response.json());
-            setCharacters(result.data)
-        }
+
         fetchQuotes();
-        fetchCharacters();
     },[])
 
+    /*
+    ** Happen every time quotes are updated
+    ** The load variable is set to true, allowing to show the content
+    ** Assign value from the array quotes to the array characters 
+    */
     useEffect(() => {
         
         var uniqueCharacters = [];
         if(quotes){
-            getRandomQuote();
+            generateQuote();
             setLoad(true); 
 
-            uniqueCharacters = Array.from(new Set(quotes.data.map(a => a.character._id)))
+            //Filter quotes with one quote from each character
+            uniqueCharacters = Array.from(new Set(quotes.data.map(quote => quote.character._id)))
             .map(id => {
                 return quotes.data.find(a => a.character._id === id)
             })
@@ -44,12 +51,16 @@ function TheOffice(){
         setCharacters(uniqueCharacters);
     },[quotes])
 
+    /*
+    ** Happen every time character Id is changed;
+    ** Set a new array of filtered quotes by character id;
+    ** Set the current quote filtered or not;
+    */
     useEffect(()=>{
-
         if(isFilter){
             setQuoteCounter(0);
             var filteredQuotes;
-            var p1 = new Promise (
+            var filterPromise = new Promise (
                 function(resolve, reject){
                     console.log(characterId);
                     filteredQuotes = quotes.data.filter(quote => quote.character._id === characterId)
@@ -57,7 +68,7 @@ function TheOffice(){
                     
                 }
             )
-            p1.then(() => setFilterQuotes(filteredQuotes))
+            filterPromise.then(() => setFilterQuotes(filteredQuotes))
             .then(() => {
                 setQuote(filteredQuotes[generateIndex(filteredQuotes)])
             })
@@ -68,7 +79,10 @@ function TheOffice(){
     }
     },[characterId, isFilter, quotes])
 
-    function getRandomQuote(){
+    /*
+    ** Generate a random quote or a filtered quote
+    */
+    function generateQuote(){
         if(isFilter){
             setQuote(filterQuotes[quoteCounter])
             if(quoteCounter === (filterQuotes.length - 1)){
@@ -82,33 +96,31 @@ function TheOffice(){
             setQuote(quotes.data[generateIndex(quotes.data)]);
         }
     }
+
+    /*
+    ** Calculate a random number for the quotes array index
+    */
     function generateIndex(quot){
         return Math.floor(Math.random() * quot.length);
-    }
-    // function showList(){
-    //     setshowCharacters(!showCharacters);
-    // }
-
-    function nextQuote(quoteArr){
-
     }
 
         return(
             <div className="theOffice">
                 <h1 className="h1A">LABORATORY</h1>
                 <div className="mt-5  margin-bottom container text-center">
-                    <h2>The Office Api</h2>
+                    <h2>The Office - Api</h2>
                     <p>Here you will find quotes from the tv series The Office. The quotes can be generated randomly or they can be filtered by character </p>
+                    <small>Api website: <a className="aColor" href="https://www.officeapi.dev">https://www.officeapi.dev</a></small>
                 {load? 
                     <div>
                         <div className="quoteCard">
                             <div className="quote"><p>"{quote.content}"</p></div>
                             <p className="quoter">-{quote.character.firstname} {quote.character.lastname}</p>
                         </div>
-                        <button onClick={getRandomQuote}> Next </button>
+                        <button className="normalButton" onClick={generateQuote}> Next </button>
                         <br/>
-                        {isFilter? <button onClick={(() => setShowCharacters(!showCharacters))}>{quote.character.firstname} {quote.character.lastname} &#x25BC;</button> 
-                        : <button onClick={(() => setShowCharacters(!showCharacters))}>Random &#x25BC;</button>}
+                        {isFilter? <button className="normalButton" onClick={(() => setShowCharacters(!showCharacters))}>{quote.character.firstname} {quote.character.lastname} &#x25BC;</button> 
+                        : <button className="normalButton" onClick={(() => setShowCharacters(!showCharacters))}>Random &#x25BC;</button>}
                         
                     </div>
                     : <p>loading...</p>}
@@ -119,20 +131,22 @@ function TheOffice(){
                 {showCharacters && characters?
 
                         <ul className="charList">
-                            <li><button onClick={() => {setShowCharacters(false); setCharacterId(""); setIsFilter(false)}}>Random</button></li>
+                            <li><button className="normalButton" onClick={() => {setShowCharacters(false); setCharacterId(""); setIsFilter(false)}}>Random</button></li>
                         {characters.map(character=>(
-                            <li><button onClick={() => {setShowCharacters(false); setCharacterId(character.character._id); setIsFilter(true)}}>{character.character.firstname} {character.character.lastname} </button></li>
+                            <li><button className={highlighId === character.character._id? 'clickedButton' : 'normalButton'}
+                                onClick={() =>{setHighlighId(character.character._id); setShowCharacters(false); setCharacterId(character.character._id); setIsFilter(true)}}>
+                                {character.character.firstname} {character.character.lastname} </button></li>
                         ))}
 
                     </ul>
 
                 : null}
                     
-                    <SideNav/>
-                </div>
-                <div className="menu">
                     
                 </div>
+                <br/>
+                <SideNav/>
+
             </div>
         );   
     }

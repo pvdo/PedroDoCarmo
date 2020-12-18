@@ -7,22 +7,21 @@
 }
 .h3Lab {
   font-family: "Monaco";
-  text-align: center;
-  font-size: 3vw;
-  margin-top: 10%;
+  font-size: 2em;
   margin-bottom: 5px;
+  text-align: center;
+  margin-top: 30%;
 }
 
 .textMenuLab {
   color: #ffffff;
-  bottom: 23%;
   text-align: center;
+  font-size: 1em;
 }
 
 .roundLinkLab {
-  height: 25vw;
-  width: 25vw;
-  padding-top: 40%;
+  height: 17em;
+  width: 17em;
   border-radius: 50%;
   background-color: #fff;
   color: #e3c252;
@@ -31,9 +30,8 @@
   display: inline-block;
 }
 .roundLinkLab:hover {
-  height: 26vw;
-  width: 26vw;
-  padding-top: 30%;
+  height: 18em;
+  width: 18em;
   color: #e3c252;
   background-color: rgb(0, 0, 0);
 }
@@ -43,8 +41,6 @@
     height: 15em;
     width: 15em;
 
-    padding-top: 20%;
-
     margin-right: auto;
     margin-left: auto;
     padding-left: 10px;
@@ -53,15 +49,11 @@
   .roundLinkLab:hover {
     height: 15em;
     width: 15em;
-    padding-top: 20%;
     background-color: #fff;
   }
   .textMenuLab {
-    position: relative;
-    font-family: "Monaco";
     font-size: 0.6em;
     color: #000;
-    margin-top: 30%;
     margin-left: 0;
     text-align: center;
     z-index: 0;

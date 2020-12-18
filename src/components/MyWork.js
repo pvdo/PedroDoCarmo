@@ -14,13 +14,19 @@ class MyWork extends Component{
 
     render(){
         return(
-            <div className="mb-5">
+            <div className="fullSize">
                 <h1 className="h1A">PROJECTS</h1>
-                <div className="container centerCol margin-bottom">
+                <div className="container margin-bottom">
                     <p className="pLab">Check out my projects!</p>
-                        <GalleryItem isLab={false}></GalleryItem>
+                    <GalleryItem isLab={false}></GalleryItem>
                 </div>
-                <SideNav page={this.state.menu}/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <SideNav/>
+
             </div>
         )
     }

@@ -30,7 +30,7 @@ class GalleryItem extends Component{
     render(){
         return(
             
-            <div className="container">
+            <div>
                 <ul className="grid">
                         {this.state.items.map(item => (
                                 <Nav.Link key={item.id} href={item.refUrl  } className={"roundLinkLab"}>

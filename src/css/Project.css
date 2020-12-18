@@ -20,4 +20,8 @@
     max-width: auto;
     height: 15em;
   }
+  .fullSize {
+    height: 100%;
+    margin-bottom: 100px;
+  }
 }

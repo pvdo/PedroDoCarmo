@@ -15,25 +15,27 @@
   justify-content: center;
   align-items: center;
 }
-.quoter {
-}
 
 .charList > li {
   display: inline;
 }
-.theOffice button {
+.normalButton {
   margin: 10px;
   padding: 5px;
   background-color: #ffffff;
-  border-color: black;
+  border-color: #000000;
+}
+.clickedButton {
+  margin: 10px;
+  padding: 5px;
+  background-color: #000000;
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 700px) {
   .quoteCard {
     font-size: 0.7em;
-  }
-  .margin-bottom {
-    margin-bottom: -60px;
   }
   .menu {
     height: 60px;

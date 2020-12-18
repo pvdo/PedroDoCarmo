@@ -6,8 +6,8 @@ class SideNav extends Component{
     render(){
         return(
             
-            <div className="marginTop">
-                <Nav className="fixed-bottomA flex-column" defaultActiveKey="/home" as="ul">
+            <div>
+                <Nav className="fixed-bottomA" defaultActiveKey="/home" as="ul">
                     <Nav.Item as="li">
                         <Nav.Link href="/"><div className={"roundLinkA"}><h3>HOME</h3></div></Nav.Link>
                     </Nav.Item>
