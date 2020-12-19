@@ -35,7 +35,8 @@
 
 @media screen and (max-width: 700px) {
   .quoteCard {
-    font-size: 0.7em;
+    font-size: 0.9em;
+    height: auto;
   }
   .menu {
     height: 60px;

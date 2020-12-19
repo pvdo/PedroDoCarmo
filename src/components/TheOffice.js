@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import SideNav from '../components/SideNav'
 import '../css/TheOffice.css'
+import axios from 'axios'
 
 function TheOffice(){
 
@@ -23,8 +24,8 @@ function TheOffice(){
     useEffect(() =>{
         
         const fetchQuotes = async() =>{
-            const result = await fetch('/quotes').then(response => response.json());
-            setQuotes(result)
+            const result = await axios.get('https://cors-anywhere.herokuapp.com/https://www.officeapi.dev/api/quotes/');
+            setQuotes(result.data)
         };
 
         fetchQuotes();
@@ -36,7 +37,7 @@ function TheOffice(){
     ** Assign value from the array quotes to the array characters 
     */
     useEffect(() => {
-        
+        console.log(quotes);
         var uniqueCharacters = [];
         if(quotes){
             generateQuote();
@@ -74,6 +75,7 @@ function TheOffice(){
             })
         }else{
             if(quotes){
+            console.log(quotes.data);
             setQuote(quotes.data[generateIndex(quotes.data)]);
         }
     }
@@ -93,6 +95,7 @@ function TheOffice(){
                 setQuoteCounter(quoteCounter + 1);
             }
         }else{
+            console.log(quotes.data)
             setQuote(quotes.data[generateIndex(quotes.data)]);
         }
     }
